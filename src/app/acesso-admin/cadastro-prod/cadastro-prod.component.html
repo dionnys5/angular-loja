@@ -1,0 +1,25 @@
+<form #produtos="ngForm">
+  <div class="row">
+    <mat-form-field class="col">
+      <input matInput placeholder="Nome" id="nome" name="nome" [(ngModel)]="nome" required>
+      <mat-error>Insira um nome do produto</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col">
+      <mat-select placeholder="Escolha uma categoria" id="categoria" name="categoria" [(ngModel)]="categoria" required>
+        <mat-option value="Esporte">Esporte</mat-option>
+        <mat-option value="Eletronico">Eletrônico</mat-option>
+        <mat-option value="Games">Games</mat-option>
+        <mat-option value="Limpeza">Limpeza</mat-option>
+      </mat-select>
+      <mat-error>Selecione uma categoria</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row mb-5">
+    <div class="col text-right">
+      <button mat-raised-button class="m-2 btn btn-success" [disabled]="!produtos.valid" (click)="salvarProduto()">
+        Salvar
+      </button>
+      <button mat-raised-button class="m-2 btn btn-secondary" (click)="limpar()">Cancelar</button>
+    </div>
+  </div>
+</form>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publico-inicio.component.css']
 })
 export class PublicoInicioComponent implements OnInit {
-
+  nome: string;
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Produto</th>
+    <th scope="col">Preço</th>
+    <th scope="col">Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of produtos">
+    <td>{{p.nome}}</td>
+    <td>{{p.preco}}</td>
+    <td>
+      <button>Editar</button>
+      <button>Excluir</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

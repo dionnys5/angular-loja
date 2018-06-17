@@ -1,0 +1,27 @@
+{
+  "administradores": [
+    {
+      "nome": "admin",
+      "senha": "admin"
+    }
+  ],
+  "clientes": [
+    {
+      "nome": "admin",
+	  "login":"admin",
+      "senha": "admin"
+    }
+  ],
+    "produtos": [
+    {
+      "nome": "Bola de vôlei",
+      "preco": 1.99,
+	  "categoria":"esporte"
+    },
+	{
+      "nome": "Detergente",
+      "preco": 3.99,
+	  "categoria":"limpeza"
+    }
+  ]
+}

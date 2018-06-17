@@ -10,7 +10,7 @@ const routes: Routes = [
         path: '', component: AcessoPublicoComponent, children: [
             {path: '', component: PublicoInicioComponent},
             {path: 'carrinho', component: PublicoCarrinhoComponent},
-            {path: 'acessar', component: PublicoLoginComponent}
+            {path: 'login', component: PublicoLoginComponent}
         ]}
 ];
 

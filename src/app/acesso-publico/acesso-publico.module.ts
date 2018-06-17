@@ -8,12 +8,24 @@ import { PublicoInicioComponent } from './publico-inicio/publico-inicio.componen
 import { PublicoCarrinhoComponent } from './publico-carrinho/publico-carrinho.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AcessoPublicoRoutingModule
+    AcessoPublicoRoutingModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ],
-  declarations: [AcessoPublicoComponent, PublicoLoginComponent, PublicoInicioComponent, PublicoCarrinhoComponent, MainNavComponent, MainFooterComponent]
+  declarations: [
+      AcessoPublicoComponent,
+      PublicoLoginComponent,
+      PublicoInicioComponent,
+      PublicoCarrinhoComponent,
+      MainNavComponent,
+      MainFooterComponent
+  ]
 })
 export class AcessoPublicoModule { }
