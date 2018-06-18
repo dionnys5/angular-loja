@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="jumbotron mt-1 m-0">
-    <img src="../../../assets/store.svg" width="150" height="150" class="img img-fluid float-left mr-5">
-    <h3 class="mt-5">Project Store</h3>
-    <p class="text-muted">Área de produtos</p>
-    <div class="clearfix"></div>
-  </div>
   <app-nav-admin></app-nav-admin>
-  <app-table-prod></app-table-prod>
+  <div class="jumbotron m-0 hero pr-0 pl-0">
+    <div class="bg-dark w-100 main-text">
+      <h3 class="mt-5 text-center text-white">Project Store</h3>
+      <p class="text-muted text-center">Área de produtos</p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
 </div>

@@ -1,19 +1,39 @@
+<div class="alert alert-success" *ngIf="salvar_ok">
+    <p>Produto inserido com suscesso!</p>
+</div>
 <table class="table">
-  <thead>
-  <tr>
-    <th scope="col">Produto</th>
-    <th scope="col">Preço</th>
-    <th scope="col">Ações</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let p of produtos">
-    <td>{{p.nome}}</td>
-    <td>{{p.preco}}</td>
-    <td>
-      <button>Editar</button>
-      <button>Excluir</button>
-    </td>
-  </tr>
-  </tbody>
+    <thead>
+    <tr>
+      <th scope="col">Foto</th>
+      <th scope="col">Produto</th>
+      <th scope="col">Preço</th>
+      <th scope="col" class="text-center">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of produtos">
+      <td><img [src]="p.img" width="50" height="50"></td>
+      <td>{{p.nome}}</td>
+      <td>R$ {{p.preco}}</td>
+      <td width="250">
+        <button mat-raised-button class="m-2 btn btn-secondary" [routerLink]="['/admin/inicio/produtos/', p.id , 'editar']" >
+          <i class="material-icons">
+            edit
+          </i>
+        </button>
+        <button mat-raised-button class="m-2 btn btn-danger" (click)="excluirProduto(p)">
+          <i class="material-icons">
+            delete_forever
+          </i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
 </table>
+<div class="text-right mr-5 mb-5">
+  <button mat-mini-fab class="bg-info" routerLink="cadastrar">
+    <i class="material-icons">
+      add
+    </i>
+  </button>
+</div>

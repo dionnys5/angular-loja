@@ -1,3 +1,4 @@
+<h3>Formulário cadastro de produto</h3>
 <form #produtos="ngForm">
   <div class="row">
     <mat-form-field class="col">
@@ -6,12 +7,21 @@
     </mat-form-field>
     <mat-form-field class="col">
       <mat-select placeholder="Escolha uma categoria" id="categoria" name="categoria" [(ngModel)]="categoria" required>
-        <mat-option value="Esporte">Esporte</mat-option>
-        <mat-option value="Eletronico">Eletrônico</mat-option>
-        <mat-option value="Games">Games</mat-option>
-        <mat-option value="Limpeza">Limpeza</mat-option>
+        <mat-option value="esporte">Esporte</mat-option>
+        <mat-option value="eletronico">Eletrônico</mat-option>
+        <mat-option value="games">Games</mat-option>
+        <mat-option value="limpeza">Limpeza</mat-option>
       </mat-select>
       <mat-error>Selecione uma categoria</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="col">
+      <input matInput placeholder="Imagem" id="img" name="img" [(ngModel)]="img">
+    </mat-form-field>
+    <mat-form-field class="col-3">
+      <input matInput placeholder="Preço Unitário" id="preco" name="preco" [(ngModel)]="preco" required>
+      <mat-error>Insira preço unitário</mat-error>
     </mat-form-field>
   </div>
   <div class="row mb-5">
@@ -19,7 +29,7 @@
       <button mat-raised-button class="m-2 btn btn-success" [disabled]="!produtos.valid" (click)="salvarProduto()">
         Salvar
       </button>
-      <button mat-raised-button class="m-2 btn btn-secondary" (click)="limpar()">Cancelar</button>
+      <button mat-raised-button class="m-2 btn btn-secondary" (click)="limparTudo()">Cancelar</button>
     </div>
   </div>
 </form>

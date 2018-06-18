@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-  usuario: string;
+  nome: string;
   senha: string;
   erro = null;
   constructor(private authService: AuthService, private router: Router) { }
@@ -17,7 +17,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
     entrar() {
-        this.authService.authAdmin(this.usuario, this.senha)
+        this.authService.authAdmin(this.nome, this.senha)
             .subscribe(usuarios => {
                 if (usuarios.length > 0) {
                     this.erro = null;

@@ -8,20 +8,31 @@
   "clientes": [
     {
       "nome": "admin",
-	  "login":"admin",
+      "login": "admin",
       "senha": "admin"
     }
   ],
-    "produtos": [
+  "produtos": [
     {
-      "nome": "Bola de vôlei",
-      "preco": 1.99,
-	  "categoria":"esporte"
+      "id": 1,
+      "nome": "Bola de vôlei Topperson",
+      "preco": "29.99",
+      "categoria": "esporte",
+      "img": "https://mercadao.com.br/media/catalog/product/cache/1/image/1100x1100/9df78eab33525d08d6e5fb8d27136e95/0/0/003120_001_1.jpg"
     },
-	{
-      "nome": "Detergente",
-      "preco": 3.99,
-	  "categoria":"limpeza"
+    {
+      "id": 2,
+      "nome": "Detergente Epy",
+      "preco": "3",
+      "categoria": "limpeza",
+      "img": "https://www.extra-imagens.com.br/ProdutosdeLimpeza/LimpezadaCasa/Detergentes/4856218/146976690/Detergente-Liquido-YPE-Neutro-Caixa-com-24-Unidades-com-500ml-Detergente-Liquido-YPE-Neutro-Caixa-com-24-Unidades-com-500ml-4856218.jpg"
+    },
+    {
+      "nome": "Camisa Brasil 2018",
+      "preco": "29.99",
+      "categoria": "esporte",
+      "img": "https://cdn.awsli.com.br/800x800/69/69727/produto/27260211/10b37969d3.jpg",
+      "id": 4
     }
   ]
 }
