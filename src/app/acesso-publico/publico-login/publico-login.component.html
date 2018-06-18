@@ -1,10 +1,67 @@
-<div class="container">
+<div class="container mb-5  ">
   <div class="row">
     <div class="col login">
-      <p>Login Aqui</p>
+      <h3>Acessar com uma conta</h3>
+      <p class="text-muted">Acessar com uma conta já cadastrada</p>
+        <div class="text-center">
+            <i class="material-icons" style="font-size: 100px; color: darkslateblue">
+                account_circle
+            </i>
+        </div>
+        <form class="form-signin" #logon="ngForm" (submit)="entrar()" class="text-center">
+            <h1 class="h3 mb-3 font-weight-normal">Cliente</h1>
+            <mat-form-field class="col">
+                <input matInput placeholder="Nome" id="nome" name="nome" [(ngModel)]="nome" required>
+                <mat-error>Insira o nome de usuario</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col">
+                <input matInput placeholder="Senha" id="senha" name="senha" [(ngModel)]="senha" required>
+                <mat-error>Insira a senha</mat-error>
+            </mat-form-field>
+            <div class="text-center">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!logon.valid">Sign in</button>
+            </div>
+
+        </form>
     </div>
     <div class="col cadastro">
-      <p>Cadastro Aqui</p>
+      <h3>Cadastrar uma nova conta</h3>
+      <p class="text-muted">Criar uma nova conta e logar</p>
+        <form class="form-signin" #cadastroCliente="ngForm" (submit)="cadastrarUsuario()" class="text-center">
+            <div class="p-4"></div>
+            <h1 class="h3 mb-3 mt-5 font-weight-normal">Criar Conta</h1>
+            <mat-form-field class="col">
+                <input matInput placeholder="Nome" id="nomeCadastro" name="nomeCadastro" [(ngModel)]="nomeCadastro" required>
+                <mat-error>Insira o nome</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <input matInput placeholder="Sobrenome" id="sobrenomeCadastro" name="sobrenomeCadastro" [(ngModel)]="sobrenomeCadastro" required>
+                <mat-error>Insira o sobrenome</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col">
+                <input matInput placeholder="Nome de usuário" id="username" name="username" [(ngModel)]="username" required>
+                <mat-error>Insira o nome de usuario</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col">
+                <input matInput placeholder="Digite a senha" id="senhaCadastro" name="senhaCadastro" [(ngModel)]="senhaCadastro" required>
+                <mat-error>Insira a senha</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <input matInput placeholder="Confirme a Senha" id="confirmSenha" name="confirmSenha" [(ngModel)]="confirmSenha" required>
+                <div class="alert alert-warning" *ngIf="erroSenha">
+                    <p>As senhas não são iguais</p>
+                </div>
+            </mat-form-field>
+
+
+            <div class="text-center">
+                <button mat-raised-button color="accent" type="submit"[disabled]="!cadastroCliente.valid">Salvar</button>
+            </div>
+
+        </form>
     </div>
   </div>
 </div>

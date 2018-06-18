@@ -8,8 +8,9 @@ import { PublicoInicioComponent } from './publico-inicio/publico-inicio.componen
 import { PublicoCarrinhoComponent } from './publico-carrinho/publico-carrinho.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   imports: [
@@ -17,7 +18,13 @@ import {FormsModule} from '@angular/forms';
     AcessoPublicoRoutingModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   declarations: [
       AcessoPublicoComponent,

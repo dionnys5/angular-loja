@@ -33,6 +33,13 @@
       "categoria": "esporte",
       "img": "https://cdn.awsli.com.br/800x800/69/69727/produto/27260211/10b37969d3.jpg",
       "id": 4
+    },
+    {
+      "nome": "Chuteira Brasil Hexa",
+      "preco": "10.99",
+      "categoria": "esporte",
+      "img": "https://cdnv2.moovin.com.br/maxtennis/imagens/produtos/original/chuteira-nike-mercurial-victory-v-fg-651632--5cbfbb7f4e6f2202901e0cf2a9f20b43.jpg",
+      "id": 5
     }
   ]
 }

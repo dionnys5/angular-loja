@@ -1,3 +1,47 @@
-<p>
-  Inicio Works!
-</p>
+<div class="row">
+
+    <div class="col-2 bg-secondary">
+      <ul class="nav flex-column bg-secondary">
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="#">Todas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Limpeza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Esportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Eletrônicos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col mt-3">
+      <div class="row flex-row">
+
+        <div *ngFor="let p of produtos" class="col-sm-2">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top"
+                 alt="Thumbnail [100%x225]"
+                 [src]="p.img"
+                 data-holder-rendered="true">
+            <div class="card-body">
+              <p>{{p.nome}} - R$ {{p.preco}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-success">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+</div>

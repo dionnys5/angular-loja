@@ -9,6 +9,15 @@ import {AuthService} from '../../shared/auth.service';
 })
 export class PublicoLoginComponent implements OnInit {
 
+  nome = null;
+  senha = null;
+  nomeCadastro = null;
+  sobrenomeCadastro = null;
+  username = null;
+  senhaCadastro = null;
+  confirmSenha = null;
+
+
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
