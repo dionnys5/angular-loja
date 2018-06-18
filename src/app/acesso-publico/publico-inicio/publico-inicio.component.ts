@@ -45,5 +45,4 @@ export class PublicoInicioComponent implements OnInit {
           return localStorageCarrinho.produtos;
       }
   }
-
 }

@@ -20,12 +20,21 @@ export class PublicoCarrinhoComponent implements OnInit {
       if (localStorageCarrinho == null) {
           return [];
       } else {
-          return localStorageCarrinho.produtos;
+          return localStorageCarrinho.produtosCarrinho;
       }
   }
 
-    atualizaProdutosCarrinho() {
-      this.produtosCarrinho = this.getCarrinho();
-    }
+  atualizaProdutosCarrinho() {
+    this.produtosCarrinho = this.getCarrinho();
+  }
+
+  excluirItemCarrinho(item) {
+    this.produtosCarrinho.splice(this.produtosCarrinho.indexOf(item), 1);
+    this.setCarrinho(this.produtosCarrinho);
+  }
+
+  setCarrinho(produtosCarrinho) {
+    localStorage.setItem('produtosCarrinho', JSON.stringify({produtosCarrinho}));
+  }
 
 }
