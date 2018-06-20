@@ -9,7 +9,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
     API_URL = 'http://localhost:3000';
-    user = null;
+    admin = null;
+    cliente = null;
 
     authAdmin(login: string, senha: string): Observable<any[]> {
         const qs = 'nome=' + login + '&senha=' + senha;
@@ -21,19 +22,35 @@ export class AuthService {
         return this.http.get<any[]>(this.API_URL + '/clientes?' + qs);
     }
 
-    set(user) {
-        this.user = user;
+    setAdmin(admin) {
+        this.admin = admin;
     }
 
-    get() {
-        return this.user;
+    setCliente(cliente) {
+        this.cliente = cliente;
     }
 
-    clear() {
-        this.user = null;
+    getAdmin() {
+        return this.admin;
     }
 
-    logout() {
-        this.clear();
+    getCliente() {
+        return this.cliente;
+    }
+
+    clearAdmin() {
+        this.admin = null;
+    }
+
+    clearCliente() {
+        this.cliente = null;
+    }
+
+    logoutAdmin() {
+        this.clearAdmin();
+    }
+
+    logoutCliente() {
+        this.clearCliente();
     }
 }

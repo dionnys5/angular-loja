@@ -8,6 +8,9 @@
                 account_circle
             </i>
         </div>
+        <div class="alert alert-warning" *ngIf="erro">
+            <p>{{erro}}</p>
+        </div>
         <form class="form-signin" #logon="ngForm" (submit)="entrar()" class="text-center">
             <h1 class="h3 mb-3 font-weight-normal">Cliente</h1>
             <mat-form-field class="col">

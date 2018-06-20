@@ -9,7 +9,7 @@ import {ProdutosService} from '../../shared/produtos.service';
 export class PublicoInicioComponent implements OnInit {
   produtos = null;
   nome: string;
-  produtosCarrinho = [];
+  carrinho = null;
   constructor(private produtosService: ProdutosService) { }
 
   ngOnInit() {
@@ -19,22 +19,24 @@ export class PublicoInicioComponent implements OnInit {
         }, () =>
         alert('Erro ao carregar produtos')
         );
-    this.atualizaCarrinho();
+    this.carrinho = this.getCarrinho();
   }
 
   addCarrinho(produto) {
-      this.atualizaCarrinho();
-      this.produtosCarrinho.push(produto);
-      this.setCarrinho(this.produtosCarrinho);
+      this.carrinho = this.getCarrinho();
+      for (let p of this.carrinho) {
+          if (p.produto.id === produto.id) {
+              alert('Produto já está no carrinho!');
+              return;
+          }
+      }
+      this.carrinho.push({'produto':produto,'quantidade':1});
+      this.setCarrinho(this.carrinho);
       alert('Produto Adicionado ao carrinho!');
   }
 
-  atualizaCarrinho() {
-      this.produtosCarrinho = this.getCarrinho();
-  }
-
-  setCarrinho(produtos) {
-      localStorage.setItem('produtosCarrinho', JSON.stringify({produtos}));
+  setCarrinho(produtosCarrinho) {
+      localStorage.setItem('produtosCarrinho', JSON.stringify({produtosCarrinho}));
   }
 
   getCarrinho() {
@@ -42,7 +44,7 @@ export class PublicoInicioComponent implements OnInit {
       if (localStorageCarrinho == null) {
           return [];
       } else {
-          return localStorageCarrinho.produtos;
+          return localStorageCarrinho.produtosCarrinho;
       }
   }
 }

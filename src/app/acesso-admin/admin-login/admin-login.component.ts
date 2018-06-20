@@ -21,7 +21,7 @@ export class AdminLoginComponent implements OnInit {
             .subscribe(usuarios => {
                 if (usuarios.length > 0) {
                     this.erro = null;
-                    this.authService.set(usuarios[0]);
+                    this.authService.setAdmin(usuarios[0]);
                     this.router.navigate(['admin/inicio']);
                 } else {
                     this.erro = 'Login ou senha incorretos';

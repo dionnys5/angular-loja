@@ -13,7 +13,10 @@
       <li class="nav-item">
         <a class="nav-link text-white" routerLink="carrinho" routerLinkActive="active">Carrinho</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="cliente">
+        <a class="nav-link text-white" routerLink="" routerLinkActive="active">Bem vindo {{cliente.nome}}</a>
+      </li>
+      <li class="nav-item" *ngIf="semCliente">
         <a class="nav-link text-white" routerLink="login" routerLinkActive="active">Acessar</a>
       </li>
     </ul>

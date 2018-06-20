@@ -7,15 +7,15 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PublicoCarrinhoComponent implements OnInit {
 
-  produtosCarrinho = null;
+  carrinho = null;
   qtProduto = null;
   constructor() { }
 
   ngOnInit() {
-    this.atualizaProdutosCarrinho();
+    this.carrinho = this.getCar();
   }
 
-  getCarrinho() {
+    getCar() {
       const localStorageCarrinho = JSON.parse(localStorage.getItem('produtosCarrinho'));
       if (localStorageCarrinho == null) {
           return [];
@@ -24,13 +24,9 @@ export class PublicoCarrinhoComponent implements OnInit {
       }
   }
 
-  atualizaProdutosCarrinho() {
-    this.produtosCarrinho = this.getCarrinho();
-  }
-
-  excluirItemCarrinho(item) {
-    this.produtosCarrinho.splice(this.produtosCarrinho.indexOf(item), 1);
-    this.setCarrinho(this.produtosCarrinho);
+  excluirItemCar(item) {
+    this.carrinho.splice(this.carrinho.indexOf(item), 1);
+    this.setCarrinho(this.carrinho);
   }
 
   setCarrinho(produtosCarrinho) {
